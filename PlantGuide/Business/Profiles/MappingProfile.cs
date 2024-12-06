@@ -10,10 +10,11 @@ public class MappingProfile : Profile
     {
         CreateMap<CreateClimateDTO, Climate>();
         CreateMap<CreateCountryDTO, Country>();
+        CreateMap<CreatePhotoDTO, Photo>();
         CreateMap<CreateFamilyDTO, Family>();
         CreateMap<CreateOriginDTO, Origin>();
-        CreateMap<CreateSourceDTO, Source>();
         CreateMap<CreatePlantDTO, Plant>();
+        CreateMap<CreateSourceDTO, Source>();
         CreateMap<CreateTypeSeasonDTO,TypeSeason>();
     }
 }
