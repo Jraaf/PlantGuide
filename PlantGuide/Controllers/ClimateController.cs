@@ -32,6 +32,10 @@ public class ClimateController : ControllerBase
         {
             return NotFound(e.Message);
         }
+        catch(Exception e)
+        {
+            return BadRequest(e.Message);
+        }
         return NoContent();
     }
     [HttpGet("GetById")]
