@@ -38,8 +38,8 @@ public partial class PlantguideContext : DbContext
 
     public virtual DbSet<TypeSeason> TypeSeasons { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-S7D9M3G\\SQLEXPRESS;Database=PLANTGUIDE;Integrated Security=true;TrustServerCertificate=true;");
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //    => optionsBuilder.UseSqlServer("Server=DESKTOP-S7D9M3G\\SQLEXPRESS;Database=PLANTGUIDE;Integrated Security=true;TrustServerCertificate=true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
