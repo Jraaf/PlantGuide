@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DataAccess.Models;
 
@@ -12,6 +13,6 @@ public partial class SourcePlant
     public int? SourceId { get; set; }
 
     public virtual Plant? Plant { get; set; }
-
+    [JsonIgnore]
     public virtual Source? Source { get; set; }
 }
