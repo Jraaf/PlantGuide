@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - PlantGuide
+name: Build and deploy ASP.Net Core app to Azure Web App - ZhenyaPro
 
 on:
   push:
@@ -51,15 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_11980ECAF87146BA926FFA8E825F1B97 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2E5DB4686D4B4208B77A3DBE74993E68 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DA6FB55A72634CABA9F611C8DE56B6D6 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1262F0B1E98E412DAEB620BA96C34C60 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_00DA3E4232D0451B99F0DB4124543411 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6D49715820F84949897FBCCBCBFAE62C }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'PlantGuide'
+          app-name: 'ZhenyaPro'
           slot-name: 'Production'
           package: .
           
