@@ -6,10 +6,13 @@ using PlantGuide.DataAccess.Repository.Interfaces;
 
 namespace PlantGuide.DataAccess.Repository;
 
-public class PlantRepository : Repo<Plant, int>, IPlantRepository
+public class FloweringSeasonPlantRepository: Repo<FloweringSeasonPlant,int>, IFloweringSeasonPlantRepository
 {
-    public PlantRepository(PlantguideContext context)
+    private readonly PlantguideContext context;
+
+    public FloweringSeasonPlantRepository(PlantguideContext context)
         : base(context)
     {
+        this.context = context;
     }
 }

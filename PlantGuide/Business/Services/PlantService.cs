@@ -18,10 +18,4 @@ public class PlantService : Crud<Plant, CreatePlantDTO>, IPlantService
         mapper = _mapper;
         repo = _repo;
     }
-
-    public async Task<Plant?> AssignFloweringSeason(CreateFloweringSeasonPlantDTO fsp)
-    {
-        var data = mapper.Map<FloweringSeasonPlant>(fsp);
-        return await repo.AssignFloweringSeason(data);
-    }
 }

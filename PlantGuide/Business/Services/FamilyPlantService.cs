@@ -7,10 +7,11 @@ using PlantGuide.DataAccess.Repository.Interfaces;
 
 namespace PlantGuide.Business.Services;
 
-public class FamilyService : Crud<Family, CreateFamilyDTO>, IFamilyService
+public class FamilyPlantService : Crud<FamilyPlant, CreateFamilyPlantDTO>, IFamilyPlantService
 {
-    public FamilyService(IMapper _mapper, IFamilyRepository _repo)
-        : base(_mapper, _repo)
+    public FamilyPlantService(IMapper mapper, IFamilyPlantRepository repo)
+        : base(mapper, repo)
     {
+
     }
 }

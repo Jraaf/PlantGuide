@@ -17,6 +17,9 @@ public static class ServiceExtension
         services.AddScoped<IPlantRepository, PlantRepository>();
         services.AddScoped<ISourceRepository, SourceRepository>();
         services.AddScoped<ITypeSeasonRepository, TypeSeasonRepository>();
+        services.AddScoped<ISourcePlantRepository, SourcePlantRepository>();
+        services.AddScoped<IFamilyPlantRepository, FamilyPlantRepository>();
+        services.AddScoped<IFloweringSeasonPlantRepository, FloweringSeasonPlantRepository>();
 
         return services;
     }
@@ -30,6 +33,10 @@ public static class ServiceExtension
         services.AddScoped<IPlantService, PlantService>();
         services.AddScoped<ISourceService, SourceService>();
         services.AddScoped<ITypeSeasonService, TypeSeasonService>();
+        services.AddScoped<ISourcePlantService, SourcePlantService>();
+        services.AddScoped<IFamilyPlantService,FamilyPlantService>();
+        services.AddScoped<IFloweringSeasonPlantService,FloweringSeasonPlantService>();
+
         return services;
     }
 }

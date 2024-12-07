@@ -1,15 +1,15 @@
 ﻿using DataAccess.Models;
 using DataAccess.Repository.Base;
-using Microsoft.EntityFrameworkCore;
 using PlantGuide.DataAccess.EF;
 using PlantGuide.DataAccess.Repository.Interfaces;
 
 namespace PlantGuide.DataAccess.Repository;
 
-public class PlantRepository : Repo<Plant, int>, IPlantRepository
+public class SourcePlantRepository : Repo<SourcePlant, int>, ISourcePlantRepository
 {
-    public PlantRepository(PlantguideContext context)
+    public SourcePlantRepository(PlantguideContext context)
         : base(context)
     {
+
     }
 }

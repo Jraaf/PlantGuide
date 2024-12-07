@@ -8,14 +8,8 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PlantController : ControllerBase
+public class FamilyPlantController(IFamilyPlantService _service) : ControllerBase
 {
-    private readonly IPlantService _service;
-
-    public PlantController(IPlantService service)
-    {
-        _service = service;
-    }
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll()
     {
@@ -30,6 +24,10 @@ public class PlantController : ControllerBase
         catch (NotFoundException e)
         {
             return NotFound(e.Message);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
         }
         return NoContent();
     }
@@ -57,7 +55,7 @@ public class PlantController : ControllerBase
         return NoContent();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(CreatePlantDTO model)
+    public async Task<IActionResult> Post(CreateFamilyPlantDTO model)
     {
         var data = await _service.AddAsync(model);
         return Ok(data);
@@ -69,7 +67,7 @@ public class PlantController : ControllerBase
         return Ok();
     }
     [HttpPut("Update")]
-    public async Task<IActionResult> Update(int id, CreatePlantDTO DTO)
+    public async Task<IActionResult> Update(int id, CreateFamilyPlantDTO DTO)
     {
         var data = await _service.UpdateByIdAsync(id, DTO);
         return Ok(data);

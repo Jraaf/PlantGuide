@@ -15,8 +15,9 @@ public class MappingProfile : Profile
         CreateMap<CreateOriginDTO, Origin>();
         CreateMap<CreatePlantDTO, Plant>();
         CreateMap<CreateSourceDTO, Source>();
-        CreateMap<CreateTypeSeasonDTO,TypeSeason>();
-        CreateMap<CreateFloweringSeasonPlantDTO,FloweringSeasonPlant>();
+        CreateMap<CreateTypeSeasonDTO, TypeSeason>();
+        CreateMap<CreateFloweringSeasonPlantDTO, FloweringSeasonPlant>();
         CreateMap<CreateFamilyPlantDTO, FamilyPlant>();
+        CreateMap<CreateSourcePlantDTO, SourcePlant>();
     }
 }

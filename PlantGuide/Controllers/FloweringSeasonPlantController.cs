@@ -8,11 +8,11 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class PlantController : ControllerBase
+public class FloweringSeasonPlantController : ControllerBase
 {
-    private readonly IPlantService _service;
+    private readonly IFloweringSeasonPlantService _service;
 
-    public PlantController(IPlantService service)
+    public FloweringSeasonPlantController(IFloweringSeasonPlantService service)
     {
         _service = service;
     }
@@ -57,7 +57,7 @@ public class PlantController : ControllerBase
         return NoContent();
     }
     [HttpPost("add")]
-    public async Task<IActionResult> Post(CreatePlantDTO model)
+    public async Task<IActionResult> Post(CreateFloweringSeasonPlantDTO model)
     {
         var data = await _service.AddAsync(model);
         return Ok(data);
@@ -69,7 +69,7 @@ public class PlantController : ControllerBase
         return Ok();
     }
     [HttpPut("Update")]
-    public async Task<IActionResult> Update(int id, CreatePlantDTO DTO)
+    public async Task<IActionResult> Update(int id, CreateFloweringSeasonPlantDTO DTO)
     {
         var data = await _service.UpdateByIdAsync(id, DTO);
         return Ok(data);

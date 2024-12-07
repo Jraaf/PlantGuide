@@ -29,15 +29,4 @@ public class FamilyRepository : Repo<Family, int>, IFamilyRepository
                 .ThenInclude(c=>c.Plant)
             .FirstOrDefaultAsync(c => c.FamilyId == id);
     }
-
-    public async Task<Family?> AssignPlant(FamilyPlant fp)
-    {
-        var data = await context.FamilyPlants.AddAsync(fp);
-        await context.SaveChangesAsync();
-        return await context.Families
-            .Include(c => c.FamilyPlants)
-                .ThenInclude(fp=>fp.Plant)
-            .FirstOrDefaultAsync(f => f.FamilyPlants
-                .Any(fp => fp.FamilyPlantId == data.Entity.FamilyPlantId));
-    }
 }
