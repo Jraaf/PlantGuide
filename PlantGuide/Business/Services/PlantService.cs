@@ -9,9 +9,19 @@ namespace PlantGuide.Business.Services;
 
 public class PlantService : Crud<Plant, CreatePlantDTO>, IPlantService
 {
+    private readonly IMapper mapper;
+    private readonly IPlantRepository repo;
+
     public PlantService(IMapper _mapper, IPlantRepository _repo)
         : base(_mapper, _repo)
     {
+        mapper = _mapper;
+        repo = _repo;
+    }
 
+    public async Task<Plant?> AssignFloweringSeason(CreateFloweringSeasonPlantDTO fsp)
+    {
+        var data = mapper.Map<FloweringSeasonPlant>(fsp);
+        return await repo.AssignFloweringSeason(data);
     }
 }

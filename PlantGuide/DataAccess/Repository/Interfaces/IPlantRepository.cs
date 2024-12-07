@@ -10,5 +10,5 @@ namespace PlantGuide.DataAccess.Repository.Interfaces;
 
 public interface IPlantRepository : IRepo<Plant, int>
 {
-
+    Task<Plant?> AssignFloweringSeason(FloweringSeasonPlant fsp);
 }

@@ -13,6 +13,6 @@ public partial class FamilyPlant
     public int? FamilyId { get; set; }
     [JsonIgnore]
     public virtual Family? Family { get; set; }
-    [JsonIgnore]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public virtual Plant? Plant { get; set; }
 }

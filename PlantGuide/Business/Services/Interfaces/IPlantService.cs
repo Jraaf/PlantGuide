@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface IPlantService : ICrud<Plant, CreatePlantDTO>
 {
+    Task<Plant?> AssignFloweringSeason(CreateFloweringSeasonPlantDTO fsp);
 }

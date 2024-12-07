@@ -74,4 +74,17 @@ public class PlantController : ControllerBase
         var data = await _service.UpdateByIdAsync(id, DTO);
         return Ok(data);
     }
+    [HttpPost("AssignFloweringSeason")]
+    public async Task<IActionResult> AssignFloweringSeason(CreateFloweringSeasonPlantDTO dto)
+    {
+        try
+        {
+            return Ok(await _service.AssignFloweringSeason(dto));
+        }
+        catch (Exception e)
+        {
+
+            return StatusCode(500, e.Message);
+        }
+    }
 }
