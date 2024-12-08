@@ -25,6 +25,6 @@ public class ClimateRepository : Repo<Climate, int>, IClimateRepository
     {
         return await context.Climates
             .Include(c => c.Plant)
-            .FirstOrDefaultAsync(c=>c.PlantId == id);
+            .FirstOrDefaultAsync(c=>c.ClimateId == id);
     }
 }
