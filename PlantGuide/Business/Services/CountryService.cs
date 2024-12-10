@@ -9,9 +9,18 @@ namespace PlantGuide.Business.Services;
 
 public class CountryService : Crud<Country, CreateCountryDTO>, ICountryService
 {
+    private readonly IMapper mapper;
+    private readonly ICountryRepository repo;
+
     public CountryService(IMapper _mapper, ICountryRepository _repo)
         : base(_mapper, _repo)
     {
+        mapper = _mapper;
+        repo = _repo;
+    }
 
+    public async Task<List<Country>> GetByPlantId(int plantId)
+    {
+        return await repo.GetByPlantId(plantId);
     }
 }

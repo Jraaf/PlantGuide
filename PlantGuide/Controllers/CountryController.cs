@@ -56,6 +56,12 @@ public class CountryController : ControllerBase
 
         return NoContent();
     }
+    [HttpGet("GetByPlantId")]
+    public async Task<IActionResult> GetByPlantId(int plantId)
+    {
+        var data = await _service.GetByPlantId(plantId);
+        return Ok(data);
+    }
     [HttpPost("add")]
     public async Task<IActionResult> Post(CreateCountryDTO model)
     {

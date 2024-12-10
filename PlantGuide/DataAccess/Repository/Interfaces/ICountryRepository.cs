@@ -5,4 +5,5 @@ namespace PlantGuide.DataAccess.Repository.Interfaces;
 
 public interface ICountryRepository : IRepo<Country, int>
 {
+    Task<List<Country>> GetByPlantId(int plantId);
 }

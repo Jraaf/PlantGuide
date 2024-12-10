@@ -5,4 +5,5 @@ namespace PlantGuide.DataAccess.Repository.Interfaces;
 
 public interface ITypeSeasonRepository : IRepo<TypeSeason, int>
 {
+    Task<List<TypeSeason>> GetByPlantId(int plantId);
 }

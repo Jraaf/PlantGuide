@@ -29,4 +29,13 @@ public class TypeSeasonRepository : Repo<TypeSeason, int>, ITypeSeasonRepository
                 .ThenInclude(fp => fp.Plant)
             .FirstOrDefaultAsync(o => o.TypeSeasonId == id);
     }
+
+    public async Task<List<TypeSeason>> GetByPlantId(int plantId)
+    {
+        return await context.TypeSeasons
+            .Include(tp => tp.FloweringSeasonPlants)
+            .Where(ts => ts.FloweringSeasonPlants
+                        .Any(fsp => fsp.PlantId == plantId))
+            .ToListAsync();
+    }
 }

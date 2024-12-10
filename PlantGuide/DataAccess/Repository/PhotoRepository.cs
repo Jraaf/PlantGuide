@@ -27,4 +27,11 @@ public class PhotoRepository : Repo<Photo, int>, IPhotoRepository
             .Include(o => o.Plant)
             .FirstOrDefaultAsync(o => o.PhotoId == id);
     }
+
+    public async Task<List<Photo>> GetByPlantId(int plantId)
+    {
+        return await context.Photos
+            .Where(p => p.PlantId == plantId)
+            .ToListAsync();
+    }
 }

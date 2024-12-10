@@ -24,9 +24,18 @@ public class FamilyRepository : Repo<Family, int>, IFamilyRepository
     }
     public async new Task<Family?> GetAsync(int id)
     {
-        return await context.Families 
+        return await context.Families
             .Include(c => c.FamilyPlants)
-                .ThenInclude(c=>c.Plant)
+                .ThenInclude(c => c.Plant)
             .FirstOrDefaultAsync(c => c.FamilyId == id);
+    }
+
+    public async Task<List<Family>> GetByPlantId(int plantId)
+    {
+        return await context.Families
+                .Include(c => c.FamilyPlants)
+                .Where(f => f.FamilyPlants
+                            .Any(fp => fp.PlantId == plantId))
+                .ToListAsync();
     }
 }

@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface IFamilyService : ICrud<Family, CreateFamilyDTO>
 {
+    Task<List<Family>> GetByPlantId(int plantId);
 }

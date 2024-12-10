@@ -9,9 +9,18 @@ namespace PlantGuide.Business.Services;
 
 public class PhotoService : Crud<Photo, CreatePhotoDTO>, IPhotoService
 {
+    private readonly IMapper mapper;
+    private readonly IPhotoRepository repo;
+
     public PhotoService(IMapper _mapper, IPhotoRepository _repo)
         : base(_mapper, _repo)
     {
+        mapper = _mapper;
+        repo = _repo;
+    }
 
+    public async Task<List<Photo>> GetByPlantId(int plantId)
+    {
+        return await repo.GetByPlantId(plantId);
     }
 }

@@ -3,6 +3,7 @@ using DataAccess.Repository.Base;
 using Microsoft.EntityFrameworkCore;
 using PlantGuide.DataAccess.EF;
 using PlantGuide.DataAccess.Repository.Interfaces;
+using PlantGuide.Migrations;
 
 namespace PlantGuide.DataAccess.Repository;
 
@@ -26,5 +27,12 @@ public class ClimateRepository : Repo<Climate, int>, IClimateRepository
         return await context.Climates
             .Include(c => c.Plant)
             .FirstOrDefaultAsync(c=>c.ClimateId == id);
+    }
+
+    public async Task<Climate?> GetByPlantId(int plantId)
+    {
+        return await context.Climates
+            .Include(c => c.Plant)
+            .FirstOrDefaultAsync(c => c.PlantId == plantId);
     }
 }

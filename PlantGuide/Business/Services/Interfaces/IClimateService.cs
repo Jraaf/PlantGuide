@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface IClimateService : ICrud<Climate, CreateClimateDTO>
 {
+    Task<Climate?> GetByPlantId(int plantId);
 }

@@ -18,7 +18,7 @@ public class CountryRepository : Repo<Country, int>, ICountryRepository
     public async new Task<List<Country>> GetAllAsync()
     {
         return await context.Countries
-            .Include(c=>c.Origins)
+            .Include(c => c.Origins)
             .ToListAsync();
     }
     public async new Task<Country?> GetAsync(int id)
@@ -26,5 +26,15 @@ public class CountryRepository : Repo<Country, int>, ICountryRepository
         return await context.Countries
             .Include(c => c.Origins)
             .FirstOrDefaultAsync(c => c.CountryId == id);
+    }
+
+    public async Task<List<Country>> GetByPlantId(int plantId)
+    {
+        return await context.Countries
+            .Include(c => c.Origins)
+                .ThenInclude(o => o.Plant)
+            .Where(c => c.Origins
+                        .Any(o => o.PlantId == plantId))
+            .ToListAsync();
     }
 }

@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface ITypeSeasonService : ICrud<TypeSeason, CreateTypeSeasonDTO>
 {
+    Task<List<TypeSeason>> GetByPlantId(int plantId);
 }

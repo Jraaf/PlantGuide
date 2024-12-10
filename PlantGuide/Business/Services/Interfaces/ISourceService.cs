@@ -6,5 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface ISourceService : ICrud<Source,CreateSourceDTO>
 {
-    
+    Task<List<Source>> GetByPlantId(int plantId);
 }

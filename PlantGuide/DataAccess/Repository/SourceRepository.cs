@@ -29,4 +29,13 @@ public class SourceRepository : Repo<Source, int>, ISourceRepository
                 .ThenInclude(sp => sp.Plant)
             .FirstOrDefaultAsync(o => o.SourceId == id);
     }
+
+    public async Task<List<Source>> GetByPlantId(int plantId)
+    {
+        return await context.Sources
+            .Include(s => s.SourcePlants)
+            .Where(s => s.SourcePlants
+                        .Any(sp => sp.PlantId == plantId))
+            .ToListAsync();
+    }
 }

@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface IPhotoService : ICrud<Photo, CreatePhotoDTO>
 {
+    Task<List<Photo>> GetByPlantId(int plantId);
 }

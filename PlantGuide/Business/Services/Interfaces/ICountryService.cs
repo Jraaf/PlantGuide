@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface ICountryService : ICrud<Country, CreateCountryDTO>
 {
+    Task<List<Country>> GetByPlantId(int plantId);
 }
