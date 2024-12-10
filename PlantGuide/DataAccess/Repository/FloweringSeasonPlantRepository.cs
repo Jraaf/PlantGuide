@@ -15,4 +15,13 @@ public class FloweringSeasonPlantRepository: Repo<FloweringSeasonPlant,int>, IFl
     {
         this.context = context;
     }
+
+    public async Task<List<FloweringSeasonPlant>> GetByPlantId(int plantId)
+    {
+        return await context.FloweringSeasonPlants
+            .Include(fsp => fsp.Plant)
+            .Include(fsp=>fsp.TypeSeason)
+            .Where(fsp => fsp.PlantId == plantId)
+            .ToListAsync();
+    }
 }

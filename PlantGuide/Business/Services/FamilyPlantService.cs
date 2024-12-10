@@ -9,9 +9,18 @@ namespace PlantGuide.Business.Services;
 
 public class FamilyPlantService : Crud<FamilyPlant, CreateFamilyPlantDTO>, IFamilyPlantService
 {
+    private readonly IMapper mapper;
+    private readonly IFamilyPlantRepository repo;
+
     public FamilyPlantService(IMapper mapper, IFamilyPlantRepository repo)
         : base(mapper, repo)
     {
+        this.mapper = mapper;
+        this.repo = repo;
+    }
 
+    public async Task<List<FamilyPlant>> GetByPlantId(int plantId)
+    {
+        return await repo.GetByPlantId(plantId);
     }
 }

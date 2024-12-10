@@ -6,4 +6,5 @@ namespace PlantGuide.Business.Services.Interfaces;
 
 public interface ISourceService : ICrud<Source,CreateSourceDTO>
 {
+    
 }

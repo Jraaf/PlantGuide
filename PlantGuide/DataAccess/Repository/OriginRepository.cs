@@ -28,4 +28,12 @@ public class OriginRepository : Repo<Origin, int>, IOriginRepository
             .Include(o=>o.Country)
             .FirstOrDefaultAsync(o=>o.OriginId == id);
     }
+
+    public async Task<List<Origin>> GetByPlantId(int plantId)
+    {
+        return await context.Origins
+                .Include(o=>o.Country)
+                .Where(o=>o.PlantId == plantId)
+                .ToListAsync();
+    }
 }
