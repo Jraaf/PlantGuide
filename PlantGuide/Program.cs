@@ -20,7 +20,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddRepository();
 builder.Services.AddBusinessServices();
-
+builder.Services.AddAuthenticationServices(builder.Configuration);
+builder.Services.AddSwaggerAuthenticationUi();
 
 var app = builder.Build();
 

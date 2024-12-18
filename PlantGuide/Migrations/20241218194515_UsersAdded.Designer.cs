@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PlantGuide.DataAccess.EF;
 
@@ -10,9 +11,11 @@ using PlantGuide.DataAccess.EF;
 namespace PlantGuide.Migrations
 {
     [DbContext(typeof(PlantguideContext))]
-    partial class PlantguideContextModelSnapshot : ModelSnapshot
+    [Migration("20241218194515_UsersAdded")]
+    partial class UsersAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

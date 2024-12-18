@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DataAccess.Models;
 using Microsoft.EntityFrameworkCore;
+using PlantGuide.DataAccess.Models;
 
 namespace PlantGuide.DataAccess.EF;
 
@@ -37,6 +38,8 @@ public partial class PlantguideContext : DbContext
     public virtual DbSet<SourcePlant> SourcePlants { get; set; }
 
     public virtual DbSet<TypeSeason> TypeSeasons { get; set; }
+    
+    public virtual DbSet<User> Users { get; set; }
 
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //    => optionsBuilder.UseSqlServer("Server=DESKTOP-S7D9M3G\\SQLEXPRESS;Database=PLANTGUIDE;Integrated Security=true;TrustServerCertificate=true;");

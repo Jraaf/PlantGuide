@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PlantGuide.Business.DTO;
 using PlantGuide.Business.Exceptions;
@@ -8,6 +9,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class SourceController : ControllerBase
 {
     private readonly ISourceService _service;

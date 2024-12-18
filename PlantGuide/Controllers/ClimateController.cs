@@ -1,4 +1,5 @@
 ﻿using DataAccess.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PlantGuide.Business.DTO;
@@ -9,6 +10,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class ClimateController : ControllerBase
 {
     private readonly IClimateService _service;
