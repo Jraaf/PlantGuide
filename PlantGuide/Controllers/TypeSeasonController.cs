@@ -9,7 +9,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class TypeSeasonController : ControllerBase
 {
     private readonly ITypeSeasonService _service;

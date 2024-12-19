@@ -9,7 +9,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class FamilyPlantController(IFamilyPlantService _service) : ControllerBase
 {
     [HttpGet("GetAll")]

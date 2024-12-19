@@ -10,7 +10,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class ClimateController : ControllerBase
 {
     private readonly IClimateService _service;

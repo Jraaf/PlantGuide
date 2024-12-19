@@ -9,7 +9,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class CountryController : ControllerBase
 {
     private readonly ICountryService _service;

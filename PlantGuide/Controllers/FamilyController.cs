@@ -9,7 +9,7 @@ namespace PlantGuide.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class FamilyController : ControllerBase
 {
     private readonly IFamilyService _service;

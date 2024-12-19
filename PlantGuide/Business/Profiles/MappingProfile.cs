@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using DataAccess.Models;
 using PlantGuide.Business.DTO;
+using PlantGuide.DataAccess.Models;
 
 namespace PlantGuide.Business.Profiles;
 
@@ -19,5 +20,6 @@ public class MappingProfile : Profile
         CreateMap<CreateFloweringSeasonPlantDTO, FloweringSeasonPlant>();
         CreateMap<CreateFamilyPlantDTO, FamilyPlant>();
         CreateMap<CreateSourcePlantDTO, SourcePlant>();
+        CreateMap<User, UserDTO>();
     }
 }
